@@ -39,8 +39,8 @@ public class ContractPersistenceAdapter implements CreateContractPort, FindContr
     }
 
     @Override
-    public void update(ContractModel userModel) {
-        ContractEntity contractEntity = ContractEntityMapper.contractModelToContractEntity(userModel);
+    public void update(ContractModel contractModel) {
+        ContractEntity contractEntity = ContractEntityMapper.contractModelToContractEntity(contractModel);
         contractEntityRepository.save(contractEntity);
     }
 }

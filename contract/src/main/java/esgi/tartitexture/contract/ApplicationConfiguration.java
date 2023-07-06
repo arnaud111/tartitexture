@@ -31,12 +31,12 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public FindContractUseCase findUserUseCase() {
+    public FindContractUseCase findContractUseCase() {
         return new FindContractService(contractPersistenceAdapter());
     }
 
     @Bean
-    public UpdateContractUseCase updateUserUseCase() {
+    public UpdateContractUseCase updateContractUseCase() {
         return new UpdateContractService(contractPersistenceAdapter(), contractPersistenceAdapter());
     }
 }

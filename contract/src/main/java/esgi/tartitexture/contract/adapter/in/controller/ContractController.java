@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/contract")
 public class ContractController {
 
     private final CreateContractUseCase createContractUseCase;
@@ -61,5 +62,23 @@ public class ContractController {
         );
 
         updateContractUseCase.update(updateContractCommand);
+    }
+
+    @PatchMapping(value = "/{id}/activate")
+    public void activateContract(@PathVariable("id") int id) {
+
+        updateContractUseCase.activate(id);
+    }
+
+    @PatchMapping(value = "/{id}/deactivate")
+    public void deactivateContract(@PathVariable("id") int id) {
+
+        updateContractUseCase.deactivate(id);
+    }
+
+    @PatchMapping(value = "/{id}/close")
+    public void closeContract(@PathVariable("id") int id) {
+
+        updateContractUseCase.close(id);
     }
 }

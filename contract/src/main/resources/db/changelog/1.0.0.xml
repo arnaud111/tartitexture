@@ -11,17 +11,15 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="isActivated" type="BOOLEAN">
+            <column name="is_activated" type="BOOLEAN">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="isClosed" type="BOOLEAN">
+            <column name="is_closed" type="BOOLEAN">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="endDate" type="DATE">
-                <constraints nullable="false"/>
-            </column>
+            <column name="end_date" type="DATE"/>
         </createTable>
     </changeSet>
 

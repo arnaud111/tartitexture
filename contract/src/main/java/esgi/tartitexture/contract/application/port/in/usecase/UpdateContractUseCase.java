@@ -5,4 +5,10 @@ import esgi.tartitexture.contract.application.port.in.command.UpdateContractComm
 public interface UpdateContractUseCase {
 
     void update(UpdateContractCommand updateContractCommand);
+
+    void activate(int id);
+
+    void deactivate(int id);
+
+    void close(int id);
 }

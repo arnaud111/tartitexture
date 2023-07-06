@@ -34,17 +34,17 @@ public class ContractEntityMapper {
         );
     }
 
-    public static List<ContractEntity> listContractModelToListContractEntity(List<ContractModel> userModelList) {
+    public static List<ContractEntity> listContractModelToListContractEntity(List<ContractModel> contractModelList) {
 
-        if (userModelList == null) return null;
+        if (contractModelList == null) return null;
 
-        return userModelList.stream().map(ContractEntityMapper::contractModelToContractEntity).collect(Collectors.toList());
+        return contractModelList.stream().map(ContractEntityMapper::contractModelToContractEntity).collect(Collectors.toList());
     }
 
-    public static List<ContractModel> listContractEntityToListContractModel(List<ContractEntity> userEntityList) {
+    public static List<ContractModel> listContractEntityToListContractModel(List<ContractEntity> contractEntityList) {
 
-        if (userEntityList == null) return null;
+        if (contractEntityList == null) return null;
 
-        return userEntityList.stream().map(ContractEntityMapper::contractEntityToContractModel).collect(Collectors.toList());
+        return contractEntityList.stream().map(ContractEntityMapper::contractEntityToContractModel).collect(Collectors.toList());
     }
 }

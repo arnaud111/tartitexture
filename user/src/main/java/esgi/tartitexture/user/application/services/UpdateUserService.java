@@ -4,7 +4,7 @@ import esgi.tartitexture.user.application.port.in.command.UpdateUserCommand;
 import esgi.tartitexture.user.application.port.in.usecase.UpdateUserUseCase;
 import esgi.tartitexture.user.application.port.out.FindUserPort;
 import esgi.tartitexture.user.application.port.out.UpdateUserPort;
-import esgi.tartitexture.user.domain.exception.UserException;
+import esgi.tartitexture.user.domain.exception.UserNotFoundException;
 import esgi.tartitexture.user.domain.model.UserModel;
 
 public class UpdateUserService implements UpdateUserUseCase {
@@ -22,7 +22,7 @@ public class UpdateUserService implements UpdateUserUseCase {
 
         UserModel oldUserModel = findUserPort.findById(updateUserCommand.getId());
 
-        if (oldUserModel == null) throw UserException.notFoundUserId(updateUserCommand.getId());
+        if (oldUserModel == null) throw UserNotFoundException.notFoundUserId(updateUserCommand.getId());
 
         UserModel userModel = new UserModel(
                 updateUserCommand.getId(),

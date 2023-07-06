@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "user")
+@Table(name = "contract")
 public class ContractEntity implements Serializable {
 
     @Id
@@ -19,7 +19,7 @@ public class ContractEntity implements Serializable {
     @Column(length = 64, nullable = false)
     private String name;
 
-    @Column(length = 64, nullable = false)
+    @Column
     private Date endDate;
 
     @Column(length = 64, nullable = false)
