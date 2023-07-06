@@ -9,4 +9,8 @@ public interface SigningEntityRepository extends CrudRepository<SigningEntity, I
 
     @Override
     List<SigningEntity> findAll();
+
+    List<SigningEntity> findByContractId(int contractId);
+
+    List<SigningEntity> findByUserId(int userId);
 }

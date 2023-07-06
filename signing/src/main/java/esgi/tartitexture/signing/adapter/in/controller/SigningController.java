@@ -32,6 +32,16 @@ public class SigningController {
         return SigningApiMapper.listSigningModelToListSingingResponse(findSigningUseCase.findAllSignings());
     }
 
+    @GetMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<SigningResponse> getSigningsByUserId(@PathVariable("id") int id) {
+        return SigningApiMapper.listSigningModelToListSingingResponse(findSigningUseCase.findSigningsByUserId(id));
+    }
+
+    @GetMapping(value = "/contract/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<SigningResponse> getSigningsByContractId(@PathVariable("id") int id) {
+        return SigningApiMapper.listSigningModelToListSingingResponse(findSigningUseCase.findSigningsByContractId(id));
+    }
+
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public SigningResponse getById(@PathVariable("id") int id) {
         return SigningApiMapper.signingModelToSigningResponse(findSigningUseCase.findSigning(id));

@@ -39,6 +39,16 @@ public class SigningPersistenceAdapter implements CreateSigningPort, FindSigning
     }
 
     @Override
+    public List<SigningModel> findByContractId(int contractId) {
+        return SigningEntityMapper.listSigningEntityToListSigningModel(signingEntityRepository.findByContractId(contractId));
+    }
+
+    @Override
+    public List<SigningModel> findByUserId(int userId) {
+        return SigningEntityMapper.listSigningEntityToListSigningModel(signingEntityRepository.findByUserId(userId));
+    }
+
+    @Override
     public void update(SigningModel userModel) {
         SigningEntity signingEntity = SigningEntityMapper.signingModelToSigningEntity(userModel);
         signingEntityRepository.save(signingEntity);

@@ -29,4 +29,14 @@ public class FindSigningService implements FindSigningUseCase {
     public List<SigningModel> findAllSignings() {
         return findSigningPort.findAll();
     }
+
+    @Override
+    public List<SigningModel> findSigningsByContractId(int contractId) {
+        return findSigningPort.findByContractId(contractId);
+    }
+
+    @Override
+    public List<SigningModel> findSigningsByUserId(int userId) {
+        return findSigningPort.findByUserId(userId);
+    }
 }

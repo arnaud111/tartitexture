@@ -9,4 +9,8 @@ public interface FindSigningPort {
     SigningModel findById(int id);
 
     List<SigningModel> findAll();
+
+    List<SigningModel> findByContractId(int contractId);
+
+    List<SigningModel> findByUserId(int userId);
 }
