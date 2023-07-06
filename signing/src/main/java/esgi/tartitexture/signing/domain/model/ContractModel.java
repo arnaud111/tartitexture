@@ -53,4 +53,15 @@ public class ContractModel {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
+    @Override
+    public String toString() {
+        return "ContractModel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", isActivated=" + isActivated +
+                ", isClosed=" + isClosed +
+                ", endDate=" + endDate +
+                '}';
+    }
 }

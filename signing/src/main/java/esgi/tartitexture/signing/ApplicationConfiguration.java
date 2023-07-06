@@ -1,6 +1,8 @@
 package esgi.tartitexture.signing;
 
 
+import esgi.tartitexture.signing.adapter.out.api.persistence.ContractPersistenceAdapter;
+import esgi.tartitexture.signing.adapter.out.api.persistence.UserPersistenceAdapter;
 import esgi.tartitexture.signing.adapter.out.database.persistence.SigningPersistenceAdapter;
 import esgi.tartitexture.signing.adapter.out.database.repository.SigningEntityRepository;
 import esgi.tartitexture.signing.application.port.in.usecase.signing.CreateSigningUseCase;
@@ -26,8 +28,18 @@ public class ApplicationConfiguration {
     }
 
     @Bean
+    public ContractPersistenceAdapter contractPersistenceAdapter() {
+        return new ContractPersistenceAdapter();
+    }
+
+    @Bean
+    public UserPersistenceAdapter userPersistenceAdapter() {
+        return new UserPersistenceAdapter();
+    }
+
+    @Bean
     public CreateSigningUseCase createSigningUseCase() {
-        return new CreateSigningService(signingPersistenceAdapter());
+        return new CreateSigningService(signingPersistenceAdapter(), contractPersistenceAdapter(), userPersistenceAdapter());
     }
 
     @Bean
@@ -37,7 +49,7 @@ public class ApplicationConfiguration {
 
     @Bean
     public UpdateSigningUseCase updateSigningUseCase() {
-        return new UpdateSigningService(signingPersistenceAdapter(), signingPersistenceAdapter());
+        return new UpdateSigningService(signingPersistenceAdapter(), signingPersistenceAdapter(), contractPersistenceAdapter(), userPersistenceAdapter());
     }
 
 }
