@@ -1,6 +1,6 @@
 package esgi.tartitexture.signing.application.services;
 
-import esgi.tartitexture.signing.application.port.in.usecase.signing.FindSigningUseCase;
+import esgi.tartitexture.signing.application.port.in.usecase.FindSigningUseCase;
 import esgi.tartitexture.signing.application.port.out.signing.FindSigningPort;
 import esgi.tartitexture.signing.domain.exception.SigningNotFoundException;
 import esgi.tartitexture.signing.domain.model.SigningModel;

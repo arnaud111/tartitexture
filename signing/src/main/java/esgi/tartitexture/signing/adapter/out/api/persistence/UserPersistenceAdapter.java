@@ -4,9 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import esgi.tartitexture.signing.adapter.out.api.mapper.UserResponseMapper;
 import esgi.tartitexture.signing.adapter.out.api.response.UserResponse;
 import esgi.tartitexture.signing.application.port.out.user.FindUserPort;
+import esgi.tartitexture.signing.domain.exception.InternalServerError;
 import esgi.tartitexture.signing.domain.exception.UserNotFoundException;
 import esgi.tartitexture.signing.domain.model.UserModel;
-import jakarta.ws.rs.InternalServerErrorException;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -33,7 +33,7 @@ public class UserPersistenceAdapter implements FindUserPort {
                     .uri(URI.create("http://127.0.0.1:8097/user/" + id))
                     .build(), HttpResponse.BodyHandlers.ofString());
         } catch (Exception e) {
-            throw new InternalServerErrorException();
+            throw new InternalServerError("Error while trying to get user from API");
         }
 
         if (response.statusCode() == 404) throw UserNotFoundException.notFoundUserId(id);
@@ -41,7 +41,7 @@ public class UserPersistenceAdapter implements FindUserPort {
         try {
             userResponse = objectMapper.readValue(response.body(), UserResponse.class);
         } catch (Exception e) {
-            throw new InternalServerErrorException();
+            throw new InternalServerError("Error while trying to parse user from API");
         }
 
         return UserResponseMapper.userResponseToUserModel(userResponse);

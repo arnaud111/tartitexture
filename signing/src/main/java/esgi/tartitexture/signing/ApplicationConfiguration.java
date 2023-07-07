@@ -5,9 +5,9 @@ import esgi.tartitexture.signing.adapter.out.api.persistence.ContractPersistence
 import esgi.tartitexture.signing.adapter.out.api.persistence.UserPersistenceAdapter;
 import esgi.tartitexture.signing.adapter.out.database.persistence.SigningPersistenceAdapter;
 import esgi.tartitexture.signing.adapter.out.database.repository.SigningEntityRepository;
-import esgi.tartitexture.signing.application.port.in.usecase.signing.CreateSigningUseCase;
-import esgi.tartitexture.signing.application.port.in.usecase.signing.FindSigningUseCase;
-import esgi.tartitexture.signing.application.port.in.usecase.signing.UpdateSigningUseCase;
+import esgi.tartitexture.signing.application.port.in.usecase.CreateSigningUseCase;
+import esgi.tartitexture.signing.application.port.in.usecase.FindSigningUseCase;
+import esgi.tartitexture.signing.application.port.in.usecase.UpdateSigningUseCase;
 import esgi.tartitexture.signing.application.services.CreateSigningService;
 import esgi.tartitexture.signing.application.services.FindSigningService;
 import esgi.tartitexture.signing.application.services.UpdateSigningService;

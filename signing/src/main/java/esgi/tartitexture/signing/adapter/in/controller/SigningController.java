@@ -4,9 +4,9 @@ import esgi.tartitexture.signing.adapter.in.controller.request.CreateSigningRequ
 import esgi.tartitexture.signing.adapter.in.controller.response.SigningResponse;
 import esgi.tartitexture.signing.adapter.in.mapper.SigningApiMapper;
 import esgi.tartitexture.signing.application.port.in.command.CreateSigningCommand;
-import esgi.tartitexture.signing.application.port.in.usecase.signing.CreateSigningUseCase;
-import esgi.tartitexture.signing.application.port.in.usecase.signing.FindSigningUseCase;
-import esgi.tartitexture.signing.application.port.in.usecase.signing.UpdateSigningUseCase;
+import esgi.tartitexture.signing.application.port.in.usecase.CreateSigningUseCase;
+import esgi.tartitexture.signing.application.port.in.usecase.FindSigningUseCase;
+import esgi.tartitexture.signing.application.port.in.usecase.UpdateSigningUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

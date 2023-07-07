@@ -1,7 +1,7 @@
 package esgi.tartitexture.signing.application.services;
 
 import esgi.tartitexture.signing.application.port.in.command.CreateSigningCommand;
-import esgi.tartitexture.signing.application.port.in.usecase.signing.CreateSigningUseCase;
+import esgi.tartitexture.signing.application.port.in.usecase.CreateSigningUseCase;
 import esgi.tartitexture.signing.application.port.out.contract.FindContractPort;
 import esgi.tartitexture.signing.application.port.out.signing.CreateSigningPort;
 import esgi.tartitexture.signing.application.port.out.user.FindUserPort;

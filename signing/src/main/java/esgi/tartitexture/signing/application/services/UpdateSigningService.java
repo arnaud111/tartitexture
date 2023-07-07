@@ -1,6 +1,6 @@
 package esgi.tartitexture.signing.application.services;
 
-import esgi.tartitexture.signing.application.port.in.usecase.signing.UpdateSigningUseCase;
+import esgi.tartitexture.signing.application.port.in.usecase.UpdateSigningUseCase;
 import esgi.tartitexture.signing.application.port.out.contract.FindContractPort;
 import esgi.tartitexture.signing.application.port.out.signing.FindSigningPort;
 import esgi.tartitexture.signing.application.port.out.signing.UpdateSigningPort;
