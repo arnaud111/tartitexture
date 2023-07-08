@@ -1,9 +1,9 @@
 package esgi.tartitexture.gateway.adapter.out;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import esgi.tartitexture.gateway.adapter.in.controller.user.request.CreateUserRequest;
-import esgi.tartitexture.gateway.adapter.in.controller.user.request.UpdateUserRequest;
-import esgi.tartitexture.gateway.adapter.in.controller.user.response.UserResponse;
+import esgi.tartitexture.gateway.adapter.in.user.request.CreateUserRequest;
+import esgi.tartitexture.gateway.adapter.in.user.request.UpdateUserRequest;
+import esgi.tartitexture.gateway.adapter.in.user.response.UserResponse;
 import esgi.tartitexture.gateway.domain.exception.InternalServerError;
 import esgi.tartitexture.gateway.domain.exception.UserNotFoundException;
 

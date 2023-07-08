@@ -1,9 +1,9 @@
 package esgi.tartitexture.gateway.adapter.out;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import esgi.tartitexture.gateway.adapter.in.controller.contract.request.CreateContractRequest;
-import esgi.tartitexture.gateway.adapter.in.controller.contract.request.UpdateContractRequest;
-import esgi.tartitexture.gateway.adapter.in.controller.contract.response.ContractResponse;
+import esgi.tartitexture.gateway.adapter.in.contract.request.CreateContractRequest;
+import esgi.tartitexture.gateway.adapter.in.contract.request.UpdateContractRequest;
+import esgi.tartitexture.gateway.adapter.in.contract.response.ContractResponse;
 import esgi.tartitexture.gateway.domain.exception.ContractNotFoundException;
 import esgi.tartitexture.gateway.domain.exception.InternalServerError;
 
@@ -11,7 +11,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.List;
 
 public class ContractPersistenceAdapter {
 
